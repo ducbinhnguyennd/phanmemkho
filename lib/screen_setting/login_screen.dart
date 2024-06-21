@@ -6,6 +6,7 @@ import 'package:qrcode/api_Service.dart';
 import 'package:qrcode/constant/colors_const.dart';
 import 'package:qrcode/constant/common_service.dart';
 import 'package:qrcode/mainscreen.dart';
+import 'package:qrcode/screen_setting/register_screen_webview.dart';
 import 'package:qrcode/user_Service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -129,8 +130,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   InkWell(
                       onTap: () async {
-                        launchUrl(Uri.parse(
-                            "https://www.ansuataohanoi.com/getregister"));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WebViewe()),
+                        );
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width / 3,
